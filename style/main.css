@@ -169,15 +169,18 @@ hr {
 .container {
   width: 700px;
   margin: 0 auto;
-  /* 加入背景图片 */
+  background-color: #BFF0FF;
+  /* 默认背景颜色 */
   background-image: url('../image/Spring.png');
-  /* 替换为你的图片路径 */
+  /* 图片路径 */
   background-size: cover;
-  /* 使背景图像覆盖整个页面 */
+  /* 使背景图像覆盖整个元素 */
   background-position: center;
   /* 将背景图像居中 */
   background-repeat: no-repeat;
   /* 不重复背景图像 */
+  min-height: 500px;
+  /* 设置最小高度,确保即使没有图片也有颜色填充 */
 }
 
 @-webkit-keyframes fade-in {
@@ -1174,4 +1177,51 @@ hr {
 
 .button-container button:hover {
   background-color: #fe5b03;
+}
+
+
+/* 实现键盘展示 */
+
+.controls {
+  display: grid;
+  grid-template-columns: 30px 30px 30px;
+  grid-template-rows: 30px 30px 30px;
+  grid-template-areas:
+    ". up ."
+    "left . right"
+    ". down .";
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+button {
+  width: 30px;
+  height: 30px;
+  font-size: 13px;
+  background-color: rgb(90, 88, 85);
+  border: none;
+  border-radius: 5px;
+  color: rgb(249, 246, 246);
+}
+
+button:active {
+  background-color: gray;
+}
+
+.up {
+  grid-area: up;
+}
+
+.down {
+  grid-area: down;
+}
+
+.left {
+  grid-area: left;
+}
+
+.right {
+  grid-area: right;
 }
