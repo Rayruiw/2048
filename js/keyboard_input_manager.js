@@ -3,13 +3,13 @@ function KeyboardInputManager() {
 
   if (window.navigator.msPointerEnabled) {
     //Internet Explorer 10 style
-    this.eventTouchstart    = "MSPointerDown";
-    this.eventTouchmove     = "MSPointerMove";
-    this.eventTouchend      = "MSPointerUp";
+    this.eventTouchstart = "MSPointerDown";
+    this.eventTouchmove = "MSPointerMove";
+    this.eventTouchend = "MSPointerUp";
   } else {
-    this.eventTouchstart    = "touchstart";
-    this.eventTouchmove     = "touchmove";
-    this.eventTouchend      = "touchend";
+    this.eventTouchstart = "touchstart";
+    this.eventTouchmove = "touchmove";
+    this.eventTouchend = "touchend";
   }
 
   this.listen();
@@ -52,8 +52,8 @@ KeyboardInputManager.prototype.listen = function () {
   // Respond to direction keys
   document.addEventListener("keydown", function (event) {
     var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
-                    event.shiftKey;
-    var mapped    = map[event.which];
+      event.shiftKey;
+    var mapped = map[event.which];
 
     if (!modifiers) {
       if (mapped !== undefined) {
@@ -79,7 +79,7 @@ KeyboardInputManager.prototype.listen = function () {
 
   gameContainer.addEventListener(this.eventTouchstart, function (event) {
     if ((!window.navigator.msPointerEnabled && event.touches.length > 1) ||
-        event.targetTouches.length > 1) {
+      event.targetTouches.length > 1) {
       return; // Ignore if touching with more than 1 finger
     }
 
@@ -100,7 +100,7 @@ KeyboardInputManager.prototype.listen = function () {
 
   gameContainer.addEventListener(this.eventTouchend, function (event) {
     if ((!window.navigator.msPointerEnabled && event.touches.length > 0) ||
-        event.targetTouches.length > 0) {
+      event.targetTouches.length > 0) {
       return; // Ignore if still touching with one or more fingers
     }
 
@@ -142,3 +142,52 @@ KeyboardInputManager.prototype.bindButtonPress = function (selector, fn) {
   button.addEventListener("click", fn.bind(this));
   button.addEventListener(this.eventTouchend, fn.bind(this));
 };
+
+
+const restartButton = document.querySelector('.restart-button');
+const restartSound = document.getElementById('restart-sound');
+const retryButton = document.querySelector('.retry-button');
+
+
+retryButton.addEventListener("click", () => {
+  restartSound.currentTime = 0; // 重置音频播放时间
+  restartSound.play(); // 播放音效
+});
+
+restartButton.addEventListener("click", () => {
+  restartSound.currentTime = 0; // 重置音频播放时间
+  restartSound.play(); // 播放音效
+});
+
+
+
+let musicOn = false; // 背景音乐开关状态
+const backgroundMusic = document.getElementById('background-music');
+const musicStatus = document.getElementById('music-status');
+const musicToggle = document.getElementById('music-toggle');
+const volumeIcon = document.getElementById('volume-icon'); //sign的
+
+document.addEventListener('DOMContentLoaded', () => {
+  musicToggle.addEventListener('click', () => {
+    console.log('Music toggle clicked'); // 调试信息
+    musicOn = !musicOn; // 切换状态
+    if (musicOn) {
+      backgroundMusic.play();
+      volumeIcon.classList.remove('fa-volume-mute');
+      volumeIcon.classList.add('fa-volume-down');
+      //musicStatus.textContent = "Music On"; // 音乐开启图标🔊
+
+    } else {
+      backgroundMusic.pause();
+      volumeIcon.classList.remove('fa-volume-down');
+      volumeIcon.classList.add('fa-volume-mute');
+      //musicStatus.textContent = "Music Off"; // 音乐关闭图标🔇
+    }
+  });
+});
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' }); // 平滑滚动
+  }
+}

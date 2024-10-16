@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>2048</title>
@@ -7,17 +8,28 @@
   <link href="style/main.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"
+    media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- iPhone, retina -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="viewport"
+    content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
+
 <body>
   <div class="container">
+    <!-- <div class="button-container">
+      <button onclick="scrollToSection('section1')" class="click-button">About</button>
+      <button onclick="scrollToSection('section2')" class="click-button">Win</button>
+      <button onclick="scrollToSection('section3')" class="click-button">Copyright</button>
+    </div> -->
     <div class="heading">
       <h1 class="title">2048</h1>
       <div class="scores-container">
@@ -27,15 +39,22 @@
     </div>
 
     <div class="above-game">
-      <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
-      <a class="restart-button">New Game</a>
+      <!-- <p class="game-intro">Welcome to the <strong>2048 game ! </strong> -->
+      <span id="music-toggle">
+        <i class="fas fa-volume-mute" id="volume-icon" style="font-size:24px"></i> <br>
+        <!-- <span class="music-status" id="music-status">Music Off</span> -->
+      </span>
+      <span class="restart-button"><i class="fa fa-undo" style="font-size:24px"></i></span>
     </div>
 
     <div class="game-container">
       <div class="game-message">
         <p></p>
+        <div class="emoji">
+          <img id="result-image" src="" alt="" style="display: none; width: 100px; margin-top: 10px;"> <!-- 用于显示结果图片 -->
+        </div>
         <div class="lower">
-	        <a class="keep-playing-button">Keep going</a>
+          <a class="keep-playing-button">Keep going</a>
           <a class="retry-button">Try again</a>
         </div>
       </div>
@@ -72,18 +91,28 @@
       </div>
     </div>
 
-    <p class="game-explanation">
-      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+    <p class="game-explanation" id="section1">
+      <strong class="important">How to play:</strong><br> Use your arrow keys to move the tiles. When two
+      tiles with the same number touch, they merge into one!
     </p>
-    <hr>
-    <p>
-    <strong class="important">Note:</strong> This site is the official version of 2048. You can play it on your phone via <a href="http://git.io/2048">http://git.io/2048.</a> All other apps or sites are derivatives or fakes, and should be used with caution.
+
+    <p id="section2">
+      <strong class="important">Win a victory:</strong> <br>
+      The game is won when the player successfully merges the numbers to produce a square with a value of
+      <strong>2048</strong>!
     </p>
-    <hr>
-    <p>
-    Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
+    <p id="section3">
+      <strong class="important">Copyright<br></strong>
+      Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a
+        href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and
+      conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
     </p>
   </div>
+
+  <audio id="restart-sound" src="sounds/restart.wav"></audio>
+  <audio id="wining-sound" src="sounds/winning.wav"></audio>
+  <audio id="failing-sound" src="sounds/failing.wav"></audio>
+  <audio id="background-music" src="sounds/background_music.mp3" loop></audio>
 
   <script src="js/bind_polyfill.js"></script>
   <script src="js/classlist_polyfill.js"></script>
@@ -96,4 +125,5 @@
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
 </body>
+
 </html>

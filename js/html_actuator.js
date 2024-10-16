@@ -1,7 +1,7 @@
 function HTMLActuator() {
-  this.tileContainer    = document.querySelector(".tile-container");
-  this.scoreContainer   = document.querySelector(".score-container");
-  this.bestContainer    = document.querySelector(".best-container");
+  this.tileContainer = document.querySelector(".tile-container");
+  this.scoreContainer = document.querySelector(".score-container");
+  this.bestContainer = document.querySelector(".best-container");
   this.messageContainer = document.querySelector(".game-message");
 
   this.score = 0;
@@ -49,9 +49,9 @@ HTMLActuator.prototype.clearContainer = function (container) {
 HTMLActuator.prototype.addTile = function (tile) {
   var self = this;
 
-  var wrapper   = document.createElement("div");
-  var inner     = document.createElement("div");
-  var position  = tile.previousPosition || { x: tile.x, y: tile.y };
+  var wrapper = document.createElement("div");
+  var inner = document.createElement("div");
+  var position = tile.previousPosition || { x: tile.x, y: tile.y };
   var positionClass = this.positionClass(position);
 
   // We can't use classlist because it somehow glitches when replacing classes
@@ -125,11 +125,32 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 };
 
 HTMLActuator.prototype.message = function (won) {
-  var type    = won ? "game-won" : "game-over";
+  var type = won ? "game-won" : "game-over";
   var message = won ? "You win!" : "Game over!";
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+
+  // 获取图片元素
+  var resultImage = document.getElementById('result-image');
+
+  if (won) {
+    resultImage.src = 'image/celebration.jpg'; // 替换为胜利图片的路径
+  } else {
+    resultImage.src = 'image/fail.jpg'; // 替换为失败图片的路径
+  }
+  resultImage.style.display = 'block'; // 显示图片
+
+  //add the audio for for win-loss
+  if (won) {
+    document.getElementById('wining-sound').currentTime = 0;
+    document.getElementById('wining-sound').play()
+  }
+  else {
+    document.getElementById('failing-sound').currentTime = 0;
+    document.getElementById('failing-sound').play()
+  }
+
 };
 
 HTMLActuator.prototype.clearMessage = function () {
