@@ -26,6 +26,9 @@ body {
   /* 悬停时添加下划线 */
 }
 
+h2 {
+  font-weight: bold;
+}
 
 
 .heading:after {
