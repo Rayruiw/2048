@@ -19,17 +19,41 @@
 
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
-  <meta name="viewport"
-    content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 
 <body>
-  <div class="container">
-    <!-- <div class="button-container">
-      <button onclick="scrollToSection('section1')" class="click-button">About</button>
-      <button onclick="scrollToSection('section2')" class="click-button">Win</button>
-      <button onclick="scrollToSection('section3')" class="click-button">Copyright</button>
-    </div> -->
+
+  <div id="startModal" class="modal">
+    <div class="modal-content">
+      <h2>Welcome to 2048 Game!</h2>
+      <p class="game-explanation" id="section1">
+        <strong class="important">How to play:</strong><br> Use your arrow keys to move the tiles. When two
+        tiles with the same number touch, they merge into one!
+      </p>
+
+      <div class="controls">
+        <button class="up">▲</button>
+        <button class="left">◀</button>
+        <button class="right">▶</button>
+        <button class="down">▼</button>
+      </div>
+      <br>
+      <p id="section2">
+        <strong class="important">Win a victory:</strong> <br>
+        The game is won when the player successfully merges the numbers to produce a square with a value of
+        <strong>2048</strong>!
+      </p>
+
+      <button id="startGameButton">Start</button>
+    </div>
+    <p id="section3">
+      <strong class="important">Copyright<br></strong>
+      Source <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a>
+      <br> Modified by P21111671 Rui Wang
+    </p>
+  </div>
+
+  <div class="container" id="gameContainer" style="display: none;">
     <div class="heading">
       <h1 class="title">2048</h1>
       <div class="scores-container">
@@ -39,7 +63,6 @@
     </div>
 
     <div class="above-game">
-      <!-- <p class="game-intro">Welcome to the <strong>2048 game ! </strong> -->
       <span id="music-toggle">
         <i class="fas fa-volume-mute" id="volume-icon" style="font-size:24px"></i> <br>
         <!-- <span class="music-status" id="music-status">Music Off</span> -->
@@ -91,7 +114,7 @@
       </div>
     </div>
 
-    <p class="game-explanation" id="section1">
+    <!-- <p class="game-explanation" id="section1">
       <strong class="important">How to play:</strong><br> Use your arrow keys to move the tiles. When two
       tiles with the same number touch, they merge into one!
     </p>
@@ -101,18 +124,18 @@
       <button class="left">◀</button>
       <button class="right">▶</button>
       <button class="down">▼</button>
-    </div>
+    </div>-->
 
-    <p id="section2">
+    <!-- <p id="section2">
       <strong class="important">Win a victory:</strong> <br>
       The game is won when the player successfully merges the numbers to produce a square with a value of
       <strong>2048</strong>!
-    </p>
-    <p id="section3">
+    </p> -->
+
+    <p id="section4">
       <strong class="important">Copyright<br></strong>
-      Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a
-        href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and
-      conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
+      Source <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a>
+      <br> Modified by P21111671 Rui Wang
     </p>
   </div>
 
@@ -120,6 +143,7 @@
   <audio id="wining-sound" src="sounds/winning.wav"></audio>
   <audio id="failing-sound" src="sounds/failing.wav"></audio>
   <audio id="background-music" src="sounds/background_music.mp3" loop></audio>
+  <audio id="start-sound" src="sounds/start.mp3"></audio>
 
   <script src="js/bind_polyfill.js"></script>
   <script src="js/classlist_polyfill.js"></script>
