@@ -72,39 +72,47 @@ body {
   animation: fadeIn 1s ease-in-out;
 }
 
+
 button#startGameButton {
   background: linear-gradient(135deg, rgba(162, 227, 230, 0.8), rgba(84, 153, 159, 0.8));
   border: none;
   border-radius: 5px;
   padding: 10px 25px;
-  /* 增加内边距 */
   text-decoration: none;
   color: black;
   font-size: 18px;
-  /* 确保字体大小适中 */
   line-height: 1.5;
-  /* 设置行高，确保垂直对齐 */
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s;
   display: inline-flex;
-  /* 使用 inline-flex 以便更好地控制内容对齐 */
   justify-content: center;
-  /* 水平居中对齐 */
   align-items: center;
-  /* 垂直居中对齐 */
   min-width: 150px;
-  /* 设置最小宽度，确保按钮足够大 */
+  animation: pulse 1.5s infinite;
+  /* 添加动画 */
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    /* 初始和结束时的大小 */
+  }
+
+  50% {
+    transform: scale(1.05);
+    /* 中间时放大 */
+  }
 }
 
 button#startGameButton:hover {
   background: linear-gradient(135deg, rgba(162, 227, 230, 1), rgba(84, 153, 159, 1));
-  transform: scale(1.05);
 }
 
 button#startGameButton:active {
   transform: scale(0.95);
 }
-
 
 h1.title {
   /* 使用 Google Fonts */
@@ -113,11 +121,7 @@ h1.title {
   margin: 0 auto;
   /* 上下边距为 0，左右边距自动 */
   display: block;
-  background: linear-gradient(to bottom, #252424, #1a4d74);
-  /* 从浅蓝色渐变到白色 */
-  -webkit-background-clip: text;
-  /* 仅为文字部分添加渐变 */
-  color: transparent;
+  color: linear-gradient(to bottom, #252424, #1a4d74);
   /* 文字颜色透明，显示渐变效果 */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   /* 添加轻微阴影，增加立体感 */
@@ -300,9 +304,9 @@ hr {
   cursor: default;
   -webkit-touch-callout: none;
   -ms-touch-callout: none;
-  -webkit-user-select: none;
+  /* -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
+  -ms-user-select: none; */
   -ms-touch-action: none;
   touch-action: none;
   /*棋盘颜色改变*/
@@ -941,9 +945,9 @@ hr {
     cursor: default;
     -webkit-touch-callout: none;
     -ms-touch-callout: none;
-    -webkit-user-select: none;
+    /* -webkit-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none;
+    -ms-user-select: none; */
     -ms-touch-action: none;
     touch-action: none;
     /*棋盘颜色改变*/
