@@ -11,7 +11,7 @@ body {
 }
 
 body {
-  margin: 80px 0;
+  /* margin: 80px 0; */
 
 }
 
@@ -21,6 +21,78 @@ body {
   clear: both;
 }
 
+/* page */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(162, 227, 230, 0.5);
+  /* 半透明背景 */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content {
+  animation: fadeIn 1s ease-in-out;
+}
+
+button#startGameButton {
+  background: linear-gradient(135deg, rgba(162, 227, 230, 0.8), rgba(84, 153, 159, 0.8));
+  border: none;
+  border-radius: 5px;
+  padding: 10px 25px;
+  /* 增加内边距 */
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  /* 确保字体大小适中 */
+  line-height: 1.5;
+  /* 设置行高，确保垂直对齐 */
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  display: inline-flex;
+  /* 使用 inline-flex 以便更好地控制内容对齐 */
+  justify-content: center;
+  /* 水平居中对齐 */
+  align-items: center;
+  /* 垂直居中对齐 */
+  min-width: 150px;
+  /* 设置最小宽度，确保按钮足够大 */
+}
+
+button#startGameButton:hover {
+  background: linear-gradient(135deg, rgba(162, 227, 230, 1), rgba(84, 153, 159, 1));
+  transform: scale(1.05);
+}
+
+button#startGameButton:active {
+  transform: scale(0.95);
+}
+
+
 h1.title {
   /* 使用 Google Fonts */
   font-size: 80px;
@@ -28,7 +100,7 @@ h1.title {
   margin: 0 auto;
   /* 上下边距为 0，左右边距自动 */
   display: block;
-  background: linear-gradient(to bottom, #f0c52b, #e36ed8);
+  background: linear-gradient(to bottom, #252424, #7e7d7e);
   /* 从浅蓝色渐变到白色 */
   -webkit-background-clip: text;
   /* 仅为文字部分添加渐变 */
@@ -167,20 +239,14 @@ hr {
 }
 
 .container {
-  width: 700px;
-  margin: 0 auto;
-  background-color: #BFF0FF;
-  /* 默认背景颜色 */
-  background-image: url('../image/Spring.png');
-  /* 图片路径 */
-  background-size: cover;
-  /* 使背景图像覆盖整个元素 */
-  background-position: center;
-  /* 将背景图像居中 */
-  background-repeat: no-repeat;
-  /* 不重复背景图像 */
-  min-height: 500px;
-  /* 设置最小高度,确保即使没有图片也有颜色填充 */
+  margin: 0;
+  padding: 0;
+  /* background-color: #BFF0FF; */
+  background-color: rgba(162, 227, 230, 0.5);
+  /* 半透明背景 */
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 @-webkit-keyframes fade-in {
@@ -227,6 +293,7 @@ hr {
   -ms-touch-action: none;
   touch-action: none;
   /*棋盘颜色改变*/
+  /* background: #faf8ef;*/
   background: #faf8ef;
   border-radius: 6px;
   border: 2px solid #bbada0;
@@ -272,14 +339,20 @@ hr {
 
 .game-container .game-message a {
   display: inline-block;
-  background: #51bc34;
+  /* button 颜色的修改 */
+  background: linear-gradient(135deg, rgba(162, 227, 230, 0.8), rgba(84, 153, 159, 0.8));
   border-radius: 3px;
   padding: 0 20px;
   text-decoration: none;
-  color: white;
+  color: black;
   height: 40px;
   line-height: 42px;
   margin-left: 9px;
+}
+
+.game-container .game-message a {
+  background: linear-gradient(135deg, rgba(162, 227, 230, 1), rgba(84, 153, 159, 1));
+  transform: scale(1.05);
 }
 
 .game-container .game-message a.keep-playing-button {
@@ -310,6 +383,7 @@ hr {
 .grid-container {
   position: absolute;
   z-index: 1;
+  margin-bottom: 20px;
 }
 
 .grid-row {
@@ -1224,4 +1298,32 @@ button:active {
 
 .right {
   grid-area: right;
+}
+
+
+#section3 {
+  position: absolute;
+  /* 绝对定位 */
+  bottom: 10px;
+  /* 距离底部的距离 */
+  right: 10px;
+  /* 距离右边的距离 */
+  color: rgb(16, 16, 16);
+  /* 文字颜色 */
+  font-size: 14px;
+  /* 字体大小，可以根据需要调整 */
+  text-align: right;
+  /* 右对齐 */
+}
+
+#section4 {
+  bottom: 10px;
+  /* 距离底部的距离 */
+  right: 10px;
+  /* 距离右边的距离 */
+  color: rgb(16, 16, 16);
+  /* 文字颜色 */
+  font-size: 14px;
+  text-align: right;
+  /* 右对齐 */
 }
