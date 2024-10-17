@@ -10,10 +10,23 @@ body {
   font-size: 18px;
 }
 
-body {
-  /* margin: 80px 0; */
-
+#section3 a,
+#section4 a {
+  color: #114780;
+  /* 设置链接颜色 */
+  text-decoration: none;
+  /* 去掉下划线 */
 }
+
+#section3 a:hover,
+#section4 a:hover {
+  color: #032244;
+  /* 设置鼠标悬停时的颜色 */
+  text-decoration: underline;
+  /* 悬停时添加下划线 */
+}
+
+
 
 .heading:after {
   content: "";
@@ -100,7 +113,7 @@ h1.title {
   margin: 0 auto;
   /* 上下边距为 0，左右边距自动 */
   display: block;
-  background: linear-gradient(to bottom, #252424, #7e7d7e);
+  background: linear-gradient(to bottom, #252424, #1a4d74);
   /* 从浅蓝色渐变到白色 */
   -webkit-background-clip: text;
   /* 仅为文字部分添加渐变 */
@@ -575,15 +588,15 @@ hr {
 }
 
 .tile.tile-8 .tile-inner {
-  color: #101010;
+  color: #00344D;
   background: #80d6ff;
-  color: #ffffff;
+
 }
 
 .tile.tile-16 .tile-inner {
-  color: #050505;
+  color: #433838;
   background: #ffd966;
-  color: #ffffff;
+
 }
 
 .tile.tile-32 .tile-inner {
@@ -593,11 +606,11 @@ hr {
 
 .tile.tile-64 .tile-inner {
   color: #ffffff;
-  background: #d47fa6;
+  background: #833f5f;
 }
 
 .tile.tile-128 .tile-inner {
-  color: #ffffff;
+  color: #0d0c0c;
   background: #ff6b6b;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
   font-size: 45px;
@@ -611,7 +624,7 @@ hr {
 
 .tile.tile-256 .tile-inner {
   color: #232015;
-  background: #c06c84;
+  background: #e1c1ca;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
   font-size: 45px;
 }
@@ -623,7 +636,7 @@ hr {
 }
 
 .tile.tile-512 .tile-inner {
-  color: #ffffff;
+  color: #382e2e;
   background: #ffad66;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
   font-size: 45px;
@@ -637,7 +650,7 @@ hr {
 
 .tile.tile-1024 .tile-inner {
   color: #383736;
-  background: #8d99ae;
+  background: #ccdfff;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
   font-size: 35px;
 }
@@ -649,9 +662,8 @@ hr {
 }
 
 .tile.tile-2048 .tile-inner {
-  color: #ffffff;
-  ;
-  background: #f7d794;
+  color: #000000;
+  background: #ff70a2;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
   font-size: 35px;
 }
