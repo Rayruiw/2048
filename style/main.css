@@ -6,24 +6,21 @@ body {
   padding: 0;
   background: white;
   color: rgb(16, 16, 16);
-  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Comic Sans MS", "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
 }
 
 #section3 a,
 #section4 a {
   color: #114780;
-  /* 设置链接颜色 */
   text-decoration: none;
-  /* 去掉下划线 */
+
 }
 
 #section3 a:hover,
 #section4 a:hover {
   color: #032244;
-  /* 设置鼠标悬停时的颜色 */
   text-decoration: underline;
-  /* 悬停时添加下划线 */
 }
 
 h2 {
@@ -48,15 +45,22 @@ h2 {
   height: 100%;
   justify-content: center;
   align-items: center;
-  background-color: rgba(162, 227, 230, 0.5);
-  /* 半透明背景 */
+  /* background-color: rgba(162, 227, 230, 0.5);  */
+  /* 调整为更明亮的半透明背景 */
+  background-color: rgba(173, 216, 230, 0.6);
+  /* 浅蓝色背景，温暖和柔和 */
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #ecf3f4;
+  /* 柔和的浅蓝色背景 */
+  /* background-image: url("/image/back.png"); */
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  border: 5px solid #80deea;
+  animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -77,7 +81,8 @@ h2 {
 
 
 button#startGameButton {
-  background: linear-gradient(135deg, rgba(162, 227, 230, 0.8), rgba(84, 153, 159, 0.8));
+  /* background: linear-gradient(135deg, rgba(162, 227, 230, 0.8), rgba(84, 153, 159, 0.8)); */
+  background: linear-gradient(135deg, #80deea, #4dd0e1);
   border: none;
   border-radius: 5px;
   padding: 10px 25px;
@@ -100,17 +105,18 @@ button#startGameButton {
   0%,
   100% {
     transform: scale(1);
-    /* 初始和结束时的大小 */
   }
 
   50% {
-    transform: scale(1.05);
-    /* 中间时放大 */
+    transform: scale(1.15);
   }
 }
 
 button#startGameButton:hover {
-  background: linear-gradient(135deg, rgba(162, 227, 230, 1), rgba(84, 153, 159, 1));
+  /* background: linear-gradient(135deg, rgba(162, 227, 230, 1), rgba(84, 153, 159, 1)); */
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #4dd0e1, #80deea);
+  /* 悬停时颜色反转 */
 }
 
 button#startGameButton:active {
@@ -122,12 +128,10 @@ h1.title {
   font-size: 80px;
   font-weight: bold;
   margin: 0 auto;
-  /* 上下边距为 0，左右边距自动 */
+
   display: block;
   color: linear-gradient(to bottom, #252424, #1a4d74);
-  /* 文字颜色透明，显示渐变效果 */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  /* 添加轻微阴影，增加立体感 */
   margin: 20px 0;
   text-align: center;
 }
@@ -180,7 +184,6 @@ h1.title {
   position: relative;
   display: inline-block;
   background: linear-gradient(to bottom, #89e3fe, #71f59b);
-  /* 文字颜色透明，显示渐变效果 */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   /* 添加轻微阴影，增加立体感 */
   padding: 10px 20px;
@@ -315,13 +318,15 @@ hr {
   /*棋盘颜色改变*/
   /* background: #faf8ef;*/
   background: #faf8ef;
-  border-radius: 6px;
-  border: 2px solid #bbada0;
+  border-radius: 10px;
+  border: 4px solid #bbada0;
+  /* 暖蓝色边框 */
   width: 500px;
   height: 500px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .game-container .game-message {
@@ -360,7 +365,7 @@ hr {
 .game-container .game-message a {
   display: inline-block;
   /* button 颜色的修改 */
-  background: linear-gradient(135deg, rgba(162, 227, 230, 0.8), rgba(84, 153, 159, 0.8));
+  background: linear-gradient(135deg, #80deea, #4dd0e1);
   border-radius: 3px;
   padding: 0 20px;
   text-decoration: none;
@@ -371,7 +376,7 @@ hr {
 }
 
 .game-container .game-message a {
-  background: linear-gradient(135deg, rgba(162, 227, 230, 1), rgba(84, 153, 159, 1));
+  background: linear-gradient(135deg, #80deea, #4dd0e1);
   transform: scale(1.05);
 }
 
@@ -396,7 +401,6 @@ hr {
 .game-container .emoji {
   display: flex;
   justify-content: center;
-  /* 水平居中 */
   align-items: center;
 }
 
@@ -427,11 +431,9 @@ hr {
   float: left;
   border-radius: 3px;
   box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.2);
-  /* 内阴影，增加立体感 */
   transition: all 0.3s ease;
   font-weight: bold;
   color: #ffffff;
-  /* 默认字体颜色 */
 
 }
 
@@ -843,9 +845,7 @@ hr {
 
 .above-game {
   display: flex;
-  /* 使用Flexbox布局 */
   align-items: center;
-  /* 垂直居中对齐 */
 }
 
 .game-intro {
@@ -876,7 +876,7 @@ hr {
   padding: 19px;
   text-decoration: none;
   margin-right: 10px;
-  /* 添加右边距以分隔两者 */
+
 }
 
 .restart-button:hover {
@@ -1199,13 +1199,11 @@ hr {
 
 #music-toggle {
   background: #eb94d0;
-  /* 创建渐变 */
   background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
   background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
   background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
   background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
   background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
-  /* 给按钮添加圆角 */
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
@@ -1221,7 +1219,6 @@ hr {
   max-width: 50px;
   margin-right: 10px;
   margin-left: 10px;
-  /* 添加右边距以分隔两者 */
 }
 
 #music-toggle:hover {
@@ -1253,19 +1250,16 @@ hr {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  /* 鼠标悬停效果 */
   transition: background-color 0.3s;
 
 }
 
 .button-container button:first-child {
   margin-left: 0;
-  /* 第一个按钮不需要左边距 */
 }
 
 .button-container button:last-child {
   margin-right: 0;
-  /* 最后一个按钮不需要右边距 */
 }
 
 .button-container button:hover {
@@ -1322,27 +1316,17 @@ button:active {
 
 #section3 {
   position: absolute;
-  /* 绝对定位 */
   bottom: 10px;
-  /* 距离底部的距离 */
   right: 10px;
-  /* 距离右边的距离 */
   color: rgb(16, 16, 16);
-  /* 文字颜色 */
   font-size: 14px;
-  /* 字体大小，可以根据需要调整 */
   text-align: right;
-  /* 右对齐 */
 }
 
 #section4 {
   bottom: 10px;
-  /* 距离底部的距离 */
   right: 10px;
-  /* 距离右边的距离 */
   color: rgb(16, 16, 16);
-  /* 文字颜色 */
   font-size: 14px;
   text-align: right;
-  /* 右对齐 */
 }
