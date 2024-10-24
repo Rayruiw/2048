@@ -1,6 +1,9 @@
 @import url(fonts/clear-sans.css);
 
-html,
+/* html {
+  filter: grayscale(100%)
+} */
+
 body {
   margin: 0;
   padding: 0;
@@ -45,11 +48,19 @@ h2 {
   height: 100%;
   justify-content: center;
   align-items: center;
+  /* background of the first page */
   background-color: rgba(173, 216, 230, 0.6);
+  /* background-repeat: no-repeat;
+  /* 不重复 */
+  background-position: center;
+  /* 居中 */
+  background-size: cover;
+  /* background-image: url("../image/Fundo.png"); */
 }
 
 .modal-content {
-  background-color: #ecf3f4;
+  background-color: white;
+  ;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
