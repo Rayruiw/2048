@@ -1,6 +1,6 @@
 @import url(fonts/clear-sans.css);
-
-/* html {
+/* 
+html {
   filter: grayscale(100%)
 } */
 
@@ -11,6 +11,10 @@ body {
   color: rgb(16, 16, 16);
   font-family: "Comic Sans MS", "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
+}
+
+.intro {
+  text-align: left;
 }
 
 #section3 a,
